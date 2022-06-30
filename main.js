@@ -1,12 +1,12 @@
 class buecher{
 
-    constructor(Seiten, Autor, Art, Exemplare, Preis) {
+    constructor(Seiten, Autor, Art, Exemplare, Preis, Titel) {
+        this.Titel = Titel
         this.Seitenanzahl = Seiten
         this.Autor = Autor
         this.Bund = Art
         this.Anzahl = Exemplare
         this.Originalpreis = Preis
-
     }
 
     verfuegbar() {
@@ -20,14 +20,14 @@ class buecher{
     }
 }
 
-
+let barkasse = 500
 let lager = []
 
 function init() {
-    let FiftyShadesOfGrey = new buecher("953", "E. L. James", "gebunden", "28", "15,00€")
-    let Outlander = new buecher("758", "Diana Gabaldon", "digital", "78", "18,00€")
-    let HarryPotter = new buecher("1456", "J. K. Rowling", "gebunden", "36", "17,00€")
-    let GregsTagebuch = new buecher("245", "Jeff Kinney", "taschenbuch","753", "14,99€" )
+    let FiftyShadesOfGrey = new buecher("953", "E. L. James", "gebunden", "28", "15,00", "FiftyShadesOfGrey")
+    let Outlander = new buecher("758", "Diana Gabaldon", "digital", "78", "18,00", "Outlander")
+    let HarryPotter = new buecher("1456", "J. K. Rowling", "gebunden", "36", "17,00", "HarryPotter")
+    let GregsTagebuch = new buecher("245", "Jeff Kinney", "taschenbuch","753", "14,99", "GregsTagebuch" )
 
     lager.push(FiftyShadesOfGrey, Outlander, HarryPotter, GregsTagebuch)
 }
@@ -58,6 +58,28 @@ function autorSuchen(autor) {
             console.log("Es gibt noch" +lager[i].Anzahl+ " Exemplare")
         }
     }
+
+function nachbestellen(autor,anzahl) {
+    for (let i = 0; i < lager.length; i++) {
+        if (lager[i].Autor === autor){
+            lager[i].Anzahl = lager[i].Anzahl + anzahl
+        }
+    }
+}
+
+function verkaufen(titel,anzahl) {
+
+}
+
+
+
+
+
+
+
+
+
+
 }
 
 //test

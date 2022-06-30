@@ -32,9 +32,9 @@ function init() {
     lager.push(FiftyShadesOfGrey, Outlander, HarryPotter, GregsTagebuch)
 }
 
-function ausDemSortiment(autor) {
+function ausDemSortiment(titel) {
     for (let i = 0; i < lager.length; i++) {
-        if (lager[i].Autor === autor){
+        if (lager[i].Titel === titel){
             lager.splice(i,1)
         }
     }
@@ -59,9 +59,9 @@ function autorSuchen(autor) {
         }
     }
 
-function nachbestellen(autor,anzahl) {
+function nachbestellen(titel,anzahl) {
     for (let i = 0; i < lager.length; i++) {
-        if (lager[i].Autor === autor){
+        if (lager[i].Titel === titel){
             lager[i].Anzahl = lager[i].Anzahl + anzahl
         }
     }
@@ -82,7 +82,7 @@ function verkaufen(titel,anzahl) {
 
 }
 
-//test
+
 
 
 

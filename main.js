@@ -87,17 +87,12 @@ function reklamation(titel,anzahl){
 }
 
 
-
-
-
-
-
-
+function rabatt(titel,prozent) {
+    for (let i = 0; i < lager.length; i++) {
+        if (lager[i].Titel === titel){
+            lager[i].Originalpreis = lager[i].Originalpreis *(100 - prozent)/100
+            console.log(lager[i].Originalpreis)
+        }
+    }
 }
-
-
-
-
-
-
-
+}

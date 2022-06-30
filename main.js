@@ -68,10 +68,23 @@ function nachbestellen(titel,anzahl) {
 }
 
 function verkaufen(titel,anzahl) {
+    for (let i = 0; i < lager.length; i++) {
+        if (lager[i].Titel === titel){
+            lager[i].Anzahl = lager[i].Anzahl - anzahl
+        }
+        barkasse = barkasse + lager[i].Originalpreis
+    }
 
 }
 
-
+function reklamation(titel,anzahl){
+    for (let i = 0; i < lager.length; i++) {
+        if (lager[i].Titel === titel){
+            lager[i].Anzahl = lager[i].Anzahl + anzahl
+        }
+        barkasse = barkasse - lager[i].Originalpreis
+    }
+}
 
 
 

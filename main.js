@@ -24,10 +24,10 @@ let barkasse = 500
 let lager = []
 
 function init() {
-    let FiftyShadesOfGrey = new buecher("953", "E. L. James", "gebunden", "28", "15,00", "FiftyShadesOfGrey")
-    let Outlander = new buecher("758", "Diana Gabaldon", "digital", "78", "18,00", "Outlander")
-    let HarryPotter = new buecher("1456", "J. K. Rowling", "gebunden", "36", "17,00", "HarryPotter")
-    let GregsTagebuch = new buecher("245", "Jeff Kinney", "taschenbuch","753", "14,99", "GregsTagebuch" )
+    let FiftyShadesOfGrey = new buecher(953, "E. L. James", "gebunden", 28, 15.00, "FiftyShadesOfGrey")
+    let Outlander = new buecher(758, "Diana Gabaldon", "digital", 78, 18.00, "Outlander")
+    let HarryPotter = new buecher(1456, "J. K. Rowling", "gebunden", 36, 17.00, "HarryPotter")
+    let GregsTagebuch = new buecher(245, "Jeff Kinney", "taschenbuch",753, 14.99, "GregsTagebuch" )
 
     lager.push(FiftyShadesOfGrey, Outlander, HarryPotter, GregsTagebuch)
 }
@@ -58,7 +58,7 @@ function autorSuchen(autor) {
             console.log("Es gibt noch" +lager[i].Anzahl+ " Exemplare")
         }
     }
-
+}
 function nachbestellen(titel,anzahl) {
     for (let i = 0; i < lager.length; i++) {
         if (lager[i].Titel === titel){
@@ -87,12 +87,12 @@ function reklamation(titel,anzahl){
 }
 
 
-function rabatt(titel,prozent) {
+function rabatt(titel, prozent) {
     for (let i = 0; i < lager.length; i++) {
         if (lager[i].Titel === titel){
-            lager[i].Originalpreis = lager[i].Originalpreis *(100 - prozent)/100
+            lager[i].Originalpreis = lager[i].Originalpreis * ((100 - prozent)/100)
             console.log(lager[i].Originalpreis)
         }
     }
 }
-}
+
